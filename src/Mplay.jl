@@ -318,7 +318,7 @@ export mplay
 function main()
     if length(ARGS) > 0
         path = ARGS[1]
-        device = length(ARGS) > 1 ? ARGS[2] : ""
+        device = length(ARGS) > 1 ? ARGS[2] : haskey(ENV, "MIDI_DEVICE")
         mplay(path, device)
     end
 end
